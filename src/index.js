@@ -1,30 +1,21 @@
-console.log('🚀 JavaScript is loading!');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import '../styles/globals.css';
 
-// Clear any existing content first to avoid React hydration conflicts
+console.log('🚀 [RIFFUSION] React + Types working! Environment:', process.env.REACT_APP_RIFFUSION_USE_BASETEN);
+
 const root = document.getElementById('root');
 if (root) {
-    console.log('✅ Found root element, clearing existing content');
+    console.log('✅ Found root element, mounting Riffusion app');
     
-    // Clear existing content completely
+    // Clear existing content completely to avoid React hydration conflicts
     root.innerHTML = '';
     
-    // Add our success content
-    root.innerHTML = `
-        <div style="padding: 20px; font-family: Arial; background: #e8f5e8;">
-            <h1>🎉 REACT ERROR #419 FIXED!</h1>
-            <p>✅ HTML loaded correctly</p>
-            <p>✅ JavaScript is executing</p>
-            <p>✅ DOM conflicts resolved</p>
-            <p>✅ Vercel deployment successful</p>
-            <div style="background: #d4edda; padding: 15px; margin: 20px 0; border-radius: 5px;">
-                <h2>🚀 Next.js → React Conversion COMPLETE!</h2>
-                <p><strong>Status:</strong> No more React errors!</p>
-                <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
-                <p><strong>Previous Error:</strong> #418 → #419 → RESOLVED</p>
-            </div>
-        </div>
-    `;
-    console.log('✨ DOM update complete - React error #419 resolved!');
+    // Mount the Riffusion app
+    ReactDOM.render(<App />, root);
+    
+    console.log('✨ [RIFFUSION] App mounted successfully!');
 } else {
     console.error('❌ Root element not found');
 }
