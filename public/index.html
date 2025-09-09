@@ -8,6 +8,12 @@
 </head>
 <body>
     <div id="root"></div>
-    <script src="/bundle.js"></script>
+    <script>
+        console.log('HTML loaded, attempting to load bundle.js');
+    </script>
+    <script src="/bundle.js" onerror="console.error('Failed to load bundle.js')"></script>
+    <script>
+        console.log('Bundle.js script tag added');
+    </script>
 </body>
 </html>
