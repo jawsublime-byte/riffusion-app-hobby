@@ -22,6 +22,16 @@ console.log('🏗️ Creating React root');
 const root = createRoot(container);
 
 console.log('🎯 Rendering App component');
-root.render(<App />);
-
-console.log('✨ React render complete');
+try {
+    root.render(<App />);
+    console.log('✨ React render complete');
+} catch (error) {
+    console.error('❌ React render failed:', error);
+    document.getElementById('root').innerHTML = `
+        <div style="padding: 20px; background: #ffebee; color: #c62828; font-family: Arial;">
+            <h2>❌ React Render Error</h2>
+            <p><strong>Error:</strong> ${error.message}</p>
+            <pre style="background: #f5f5f5; padding: 10px; overflow: auto;">${error.stack}</pre>
+        </div>
+    `;
+}
