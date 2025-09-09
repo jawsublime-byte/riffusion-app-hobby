@@ -3,7 +3,6 @@ import { AppState } from "../types";
 import * as Tone from "tone";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import ThreeCanvas from "../components/ThreeCanvas";
 
 export default function App() {
   // Basic state
