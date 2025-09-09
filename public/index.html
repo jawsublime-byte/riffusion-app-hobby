@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riffusion</title>
+    <title>Riffusion - Debug</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div style="padding: 20px; font-family: Arial; background: #f0f0f0;">
+            <h1>🚧 Riffusion Debug Mode</h1>
+            <p>If you can see this, HTML is loading but React is not mounting.</p>
+            <p>Time: <span id="time"></span></p>
+            <p>React should replace this content...</p>
+        </div>
+    </div>
     <script>
-        console.log('HTML loaded, webpack should inject bundle.js automatically');
+        document.getElementById('time').innerText = new Date().toLocaleString();
+        console.log('HTML loaded at', new Date().toLocaleString());
     </script>
 </body>
 </html>
