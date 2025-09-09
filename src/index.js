@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 console.log('🚀 React index.js loaded');
 
@@ -18,12 +18,9 @@ if (!container) {
     console.log('✅ Root element found:', container);
 }
 
-console.log('🏗️ Creating React root');
-const root = createRoot(container);
-
-console.log('🎯 Rendering App component');
+console.log('🎯 Rendering App component with ReactDOM.render');
 try {
-    root.render(<App />);
+    ReactDOM.render(<App />, container);
     console.log('✨ React render complete');
 } catch (error) {
     console.error('❌ React render failed:', error);
@@ -31,6 +28,7 @@ try {
         <div style="padding: 20px; background: #ffebee; color: #c62828; font-family: Arial;">
             <h2>❌ React Render Error</h2>
             <p><strong>Error:</strong> ${error.message}</p>
+            <p><strong>React Error #418</strong></p>
             <pre style="background: #f5f5f5; padding: 10px; overflow: auto;">${error.stack}</pre>
         </div>
     `;
